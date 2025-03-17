@@ -1,0 +1,42 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compilar Java",
+            "type": "shell",
+            "command": "javac",
+            "args": [
+                "src/*.java"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Ejecutar Main",
+            "type": "shell",
+            "command": "java",
+            "args": [
+                "-cp",
+                "src",
+                "Main"
+            ],
+            "group": "test"
+        },
+        {
+            "label": "Generar JAR",
+            "type": "shell",
+            "command": "jar",
+            "args": [
+                "cvfm",
+                "traductor de codigo A_S.jar",
+                "MANIFEST.MF",
+                "-C",
+                "src",
+                "."
+            ],
+            "group": "build"
+        }
+    ]
+}
